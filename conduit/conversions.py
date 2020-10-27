@@ -2,7 +2,6 @@ from datetime import datetime, timedelta
 from dateutil.parser import parse
 import numpy as np
 import pandas as pd
-from openpyxl.utils.dataframe import dataframe_to_rows
 
 
 def time_to_millis_since_epoch(time):
@@ -49,20 +48,3 @@ def make_numeric(dataframe):
         dataframe[col] = pd.to_numeric(
             dataframe[col].replace('NaN', np.NaN),
             errors='ignore')
-
-
-def data_frame_to_excel_tab(dataframe, workbook, tab_name, index):
-    """
-    Write header and content of dataframe to specified tab in the argument workbook
-    :param dataframe: data frame to be emitted into workbook
-    :param workbook: openpyxl workbook
-    :param tab_name: name of worksheet
-    :param index: False if index should be omitted
-    :return:
-    """
-    if tab_name in workbook.sheetnames:
-        worksheet = workbook[tab_name]
-    else:
-        worksheet = workbook.create_sheet(tab_name)
-    for row in dataframe_to_rows(dataframe, index=index, header=True):
-        worksheet.append(row)
