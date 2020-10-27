@@ -3,13 +3,8 @@
 
 FROM amancevice/pandas
 
-# PYTHON DATA SCIENCE PACKAGES
-#   * numpy: support for large, multi-dimensional arrays and matrices
-#   * matplotlib: plotting library for Python and its numerical mathematics extension NumPy.
-#   * scipy: library used for scientific computing and technical computing
-#   * scikit-learn: machine learning library integrates with NumPy and SciPy
-#   * pandas: library providing high-performance, easy-to-use data structures and data analysis tools
-#   * nltk: suite of libraries and programs for symbolic and statistical natural language processing for English
+# ADDITIONAL PYTHON PACKAGES
+#   * requests: an elegant and simple HTTP library for Python, built for human beings
 ENV PYTHON_PACKAGES="\
     requests \
 " 
