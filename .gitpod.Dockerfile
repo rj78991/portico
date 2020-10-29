@@ -9,10 +9,7 @@ ENV PYTHON_PACKAGES="\
     requests \
 " 
 
-RUN apk add --no-cache --virtual build-dependencies python --update py-pip \
-    && pip install --upgrade pip \
-    && pip install --no-cache-dir $PYTHON_PACKAGES \
-    && apk add --no-cache --virtual build-dependencies $PACKAGES \
-    && rm -rf /var/cache/apk/*
+RUN pip install --upgrade pip \
+    && pip install --no-cache-dir $PYTHON_PACKAGES
 
 CMD ["python"]
