@@ -2,7 +2,7 @@ from adaptor import Adaptor
 
 
 if __name__ == "__main__":
-    CLIENT_ID = "PGH9DVE22SZWDFBWK5YJV2PMDOA1UYBO"
+    CLIENT_ID = "--------------------------------"
     adaptor = Adaptor(CLIENT_ID)
     price_history = adaptor.get_price_history(
         "HYD",
